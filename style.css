@@ -1,0 +1,17 @@
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+} 
+
+aside {
+    padding: 20px;
+}
+
+aside input {
+    width: 250px;
+}
+
+#map {
+    height: 100%;
+}

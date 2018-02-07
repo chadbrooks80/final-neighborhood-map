@@ -1,0 +1,81 @@
+<div id="view1">
+    <ul>
+        <li><label>Checkbox 0x1<input type="checkbox" data-bind="checked: flags.bit1(0x1)"/></label></li>
+        <li><label>Checkbox 0x2<input type="checkbox" data-bind="checked: flags.bit1(0x2)"/></label></li>
+        <li><label>Checkbox 0x4<input type="checkbox" data-bind="checked: flags.bit1(0x4)"/></label></li>
+        <li><label>Checkbox 0x8<input type="checkbox" data-bind="checked: flags.bit1(0x8)"/></label></li>
+    </ul>
+    <div data-bind="text: flags"></div>
+    </div>
+    
+    <hr>
+    
+    <div id="view2">
+    <ul>
+        <li><label>Checkbox 0x1<input type="checkbox" data-bind="checked: flags.bit2(0x1)"/></label></li>
+        <li><label>Checkbox 0x2<input type="checkbox" data-bind="checked: flags.bit2(0x2)"/></label></li>
+        <li><label>Checkbox 0x4<input type="checkbox" data-bind="checked: flags.bit2(0x4)"/></label></li>
+        <li><label>Checkbox 0x8<input type="checkbox" data-bind="checked: flags.bit2(0x8)"/></label></li>
+    </ul>
+    <div data-bind="text: flags"></div>
+    </div>
+    
+    <hr>
+    
+    <div id="view3">
+    <ul>
+        <li><label>Checkbox 1<input type="checkbox" data-bind="checked: checkedValues, value: 1"/></label></li>
+        <li><label>Checkbox 2<input type="checkbox" data-bind="checked: checkedValues, value: 2"/></label></li>
+        <li><label>Checkbox 3<input type="checkbox" data-bind="checked: checkedValues, value: 3"/></label></li>
+        <li><label>Checkbox 4<input type="checkbox" data-bind="checked: checkedValues, value: 4"/></label></li>
+    </ul>
+    <div data-bind="text: ko.toJSON(checkedValues)"></div>
+    </div>
+
+<script src="knockout-3.4.2.js"></script>
+
+<script>
+    ko.observable.fn.bit1 = function (bit) {
+        return ko.computed({
+            read: function () {
+                console.log(bit)
+                return !!(this() & bit);
+            },
+            write: function (checked) {
+                if (checked)
+                    this(this() | bit);
+                else
+                    this(this() & ~bit);
+            }
+        }, this);
+    };
+
+    function ViewModel1() {
+        this.flags = ko.observable(0);
+    }
+    ko.applyBindings(new ViewModel1, document.getElementById('view1'));
+
+    function ViewModel2() {
+        this.flags = ko.observable(0);
+
+        this.flags.bit2 = function (bit) {
+            return ko.computed({
+                read: function () {
+                    return !!(this() & bit);
+                },
+                write: function (checked) {
+                    if (checked)
+                        this(this() | bit);
+                    else
+                        this(this() & ~bit);
+                }
+            }, this);
+        }.bind(this.flags);
+    }
+    ko.applyBindings(new ViewModel2, document.getElementById('view2'));
+
+    function ViewModel3() {
+        this.checkedValues = ko.observableArray([]);
+    };
+    ko.applyBindings(new ViewModel3, document.getElementById('view3'));
+</script>
