@@ -1,42 +1,52 @@
 var data = [
 	{
-		"name":"Casa Bonita",
-		"location": {"lat":39.7417639,"lng":-105.07070499999998}
+		"title":"Casa Bonita",
+		"location": {"lat":39.7417639,"lng":-105.07070499999998},
+		"id" : 2
 	},
 	{
-		"name":"Belmar Park",
-		"location":{"lat":39.701421,"lng":-105.09373779999999}
+		"title":"Belmar Park",
+		"location":{"lat":39.701421,"lng":-105.09373779999999},
+		"id" : 2
 	},
 	{
-		"name":"Lakeside Amusement Park",
-		"location":{"lat":39.7792034,"lng":-105.05433449999998}
+		"title":"Lakeside Amusement Park",
+		"location":{"lat":39.7792034,"lng":-105.05433449999998},
+		"id" : 3
 	},
 	{
-		"name":"Colorado Mills Mall",
-		"location":{"lat":39.73220389999999,"lng":-105.15842499999997}
+		"title":"Colorado Mills Mall",
+		"location":{"lat":39.73220389999999,"lng":-105.15842499999997},
+		"id" : 4
 	},
 	{
-		"name":"Southwest Plaza",
-		"location":{"lat":39.612175,"lng":-105.095685}
+		"title":"Southwest Plaza",
+		"location":{"lat":39.612175,"lng":-105.095685},
+		"id" : 5
 	},
 	{
-		"name":"Cherry Creek Shopping Center",
-		"location":{"lat":39.7168618,"lng":-104.9527622}
+		"title":"Cherry Creek Shopping Center",
+		"location":{"lat":39.7168618,"lng":-104.9527622},
+		"id" : 6
 	},
 	{
-		"name":"P.F. Chang's",
-		"location":{"lat":39.7107186,"lng":-105.077267}
+		"title":"P.F. Chang's",
+		"location":{"lat":39.7107186,"lng":-105.077267},
+		"id" : 7
 	},
 	{
-		"name":"Belmar Library Jefferson County Public Library",
-		"location":{"lat":39.7065098,"lng":-105.08425310000001}
+		"title":"Belmar Library Jefferson County Public Library",
+		"location":{"lat":39.7065098,"lng":-105.08425310000001},
+		"id" : 8
 	},
 	{
-		"name":"Barnes & Noble",
-		"location":{"lat":39.7368727,"lng":-105.16111390000003}
+		"title":"Barnes & Noble",
+		"location":{"lat":39.7368727,"lng":-105.16111390000003},
+		"id" : 9
 	},
 	{
-		"name":"Robert F. Clement Park",
-		"location":{"lat":39.605692,"lng":-105.07758100000001}
+		"title":"Robert F. Clement Park",
+		"location":{"lat":39.605692,"lng":-105.07758100000001},
+		"id" : 10
 	}
 ]

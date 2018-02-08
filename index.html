@@ -13,10 +13,10 @@
 
         <p data-bind="text: filter"></p>
 
-        <ul data-bind="foreach: markers">
+        <ul data-bind="foreach: data">
             
             <!-- ko if: $root.filterResults($data) -->
-            <li data-bind="text: $data.title, click: $parent.showInfoWindow"></li>
+            <li data-bind="text: $data.title, click: $parent.displayInfoWindow"></li>
             <!-- /ko -->
         </ul>
 
