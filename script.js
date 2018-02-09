@@ -93,36 +93,33 @@ vm.filterResults =  function (data) {
 ko.applyBindings(vm);
 
 function showInfoWindow(marker, infoWindow) {
-    if (infoWindow.marker != marker) {
-        
-        //FOURSQUARE DETAILS
-    var clientId = 'UVH2XVQVKG32VB0D1SAHCKLIS1VQQBDHUDHCA43WMNJ04VMY';
-    var clientSecret = 'F1EIWBO14JZDDY3QSY5MOAE3FJYJ0ID43FSJNAIM1MRDUOH2';
-    var latLng = marker.location.lat + "," + marker.location.lng
-    url = "https://api.foursquare.com/v2/venues/search?limit=1&v=20170413" + 
-        "&ll=" + latLng + 
-        "&client_id=" + clientId + 
-        "&client_secret=" + clientSecret;
-        infoWindow.marker = marker;
-    infoWindow.setContent(
-        '<div>' + marker.title + '</div>' +
-        '<div data-bind="text: fourSquareData"></div>'
-    );
     
-    //make marker bounce
-    marker.setAnimation(google.maps.Animation.BOUNCE);
-    setTimeout(function() {
-    marker.setAnimation(null);
-    }, 2100);
+    //FOURSQUARE DETAILS
+var clientId = 'UVH2XVQVKG32VB0D1SAHCKLIS1VQQBDHUDHCA43WMNJ04VMY';
+var clientSecret = 'F1EIWBO14JZDDY3QSY5MOAE3FJYJ0ID43FSJNAIM1MRDUOH2';
+var latLng = marker.location.lat + "," + marker.location.lng
+url = "https://api.foursquare.com/v2/venues/search?limit=1&v=20170413" + 
+    "&ll=" + latLng + 
+    "&client_id=" + clientId + 
+    "&client_secret=" + clientSecret;
+    infoWindow.marker = marker;
+infoWindow.setContent(
+    '<div>' + marker.title + '</div>' +
+    '<div data-bind="text: fourSquareData"></div>'
+);
 
-    infoWindow.open(map, marker);
-    // Make sure the marker property is cleared if the infoWindow is closed.
-    infoWindow.addListener('closeclick',function(){
-        infoWindow.setMarker = null;
-        vm.fourSquareData("")
-    });
+//make marker bounce
+marker.setAnimation(google.maps.Animation.BOUNCE);
+setTimeout(function() {
+marker.setAnimation(null);
+}, 2100);
 
-    }
+infoWindow.open(map, marker);
+// Make sure the marker property is cleared if the infoWindow is closed.
+infoWindow.addListener('closeclick',function(){
+    infoWindow.setMarker = null;
+    vm.fourSquareData("")
+});
     
     
     var fourSqrData;
