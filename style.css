@@ -1,17 +1,90 @@
+html,
 body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-} 
-
-aside {
-    padding: 20px;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: #0375b4;
 }
 
-aside input {
-    width: 250px;
+ul {
+  list-style-type: none;
+  margin-left: 12px;
+}
+
+ul li {
+  border-style: solid;
+  padding: 5px 10px;
+  width: 200px;
+  margin-bottom: 5px;
+  text-align: center;
+  border-radius: 3px;
+  background-color: white;
+}
+
+#sdbarOpened {
+  z-index: 10;
+  height: 100%;
+  position: relative;
+  background-color: #FEC800;
+  width: 362px;
+  opacity: .9
+}
+
+#sdbarColapsed {
+  z-index: 10;
+  height: 100%;
+  position: relative;
+  background-color: #FEC800;
+  width: 55px;
+  display: none;
+  opacity: .75;
+}
+
+img.toggle {
+  width: 50;
+}
+
+img.#opened-img {
+  position: absolute;
+  right: 30px;
+  background-color: red;
+}
+
+input {
+  margin-top: 10px;
+  font-size: 18px;
+  width: 250px;
+  color: #0375b4;
+  margin-left: 40px;
+  padding: 9px;
+  padding-left: 12px;
+  border-radius: 8px;
+  opacity: .89;
+  border: none;
+  
+}
+
+h1 {
+  color: #525454;
+  font-size: 22px;
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+
+hr {
+  background: #D0D7D9;
+  height: 1px;
+  margin: 20px 0 20px 0;
+  border: none;
 }
 
 #map {
-    height: 100%;
+  z-index: 5;
+  bottom:0px;
+  height: 100%;
+  width: 100%;
+  /* left: 100px; */
+  position: absolute;
+  right: 0px;
 }

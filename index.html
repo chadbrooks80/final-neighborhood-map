@@ -7,11 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <aside>
-        <input type="text" name="filter" data-bind="value: filter, valueUpdate: 'keyup'"
-            placeholder="refine your search here..." id="filter">
 
-        <p data-bind="text: filter"></p>
+    <div id="sdbarColapsed" data-bind="style: {display: maxSideBar() ? 'none' : 'block'}">
+            <img class="toggle" src="img/button.png" data-bind="click: $root.sidebarToggle">
+    </div>
+
+    <div id="sdbarOpened" data-bind="style: {display: maxSideBar() ? 'block' : 'none'}">
+        <div><img class="toggle" id="opened-img" src="img/button.png" data-bind="click: $root.sidebarToggle"></div>
+        <div><input type="text" name="filter" data-bind="value: filter, valueUpdate: 'keyup'"
+            placeholder="refine your search here..." id="filter"></div>
+
+        
 
         <ul data-bind="foreach: data">
             
@@ -19,13 +25,17 @@
             <li data-bind="text: $data.title, click: $parent.displayInfoWindow"></li>
             <!-- /ko -->
         </ul>
-
-    </aside>
+        
+    </div>
     <div id="map"></div>
 
+    <script
+        src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <script src="knockout-3.4.2.js"></script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAf640kSXMGRhL3UjZ0Lz2JudvoCPA5ubw&libraries=places&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAf640kSXMGRhL3UjZ0Lz2JudvoCPA5ubw&libraries=places&callback=initMap" onerror="mapError()">
     </script>
     <script src="data.js"></script>
     <script src="script.js"></script>

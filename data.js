@@ -2,7 +2,7 @@ var data = [
 	{
 		"title":"Casa Bonita",
 		"location": {"lat":39.7417639,"lng":-105.07070499999998},
-		"id" : 2
+		"id" : 1
 	},
 	{
 		"title":"Belmar Park",
