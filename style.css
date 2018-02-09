@@ -9,7 +9,7 @@ body {
 
 ul {
   list-style-type: none;
-  margin-left: 12px;
+  margin-left: 0px;
 }
 
 ul li {
@@ -27,7 +27,7 @@ ul li {
   height: 100%;
   position: relative;
   background-color: #FEC800;
-  width: 362px;
+  width: 300px;
   opacity: .9
 }
 
@@ -45,18 +45,12 @@ img.toggle {
   width: 50;
 }
 
-img.#opened-img {
-  position: absolute;
-  right: 30px;
-  background-color: red;
-}
-
 input {
   margin-top: 10px;
   font-size: 18px;
   width: 250px;
   color: #0375b4;
-  margin-left: 40px;
+  margin-left: 25px;
   padding: 9px;
   padding-left: 12px;
   border-radius: 8px;
