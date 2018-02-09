@@ -1,6 +1,6 @@
 html,
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -22,13 +22,20 @@ ul li {
   background-color: white;
 }
 
+#powered {
+  font-family: 'Kalam', cursive;
+  font-weight: bold;
+  margin-left: 12px;
+  color: #007849;
+}
+
 #sdbarOpened {
   z-index: 10;
   height: 100%;
   position: relative;
   background-color: #FEC800;
   width: 300px;
-  opacity: .9
+  opacity: .9;
 }
 
 #sdbarColapsed {
@@ -56,7 +63,7 @@ input {
   border-radius: 8px;
   opacity: .89;
   border: none;
-  
+
 }
 
 h1 {
